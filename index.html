@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
-	<meta charset="utf-8">
-	<script src="./js/jquery.min.js"></script>
-	<link rel="stylesheet" href="./css/style.css">
-	<title>微信赞赏码免签约支付-企业猫源码</title>
+    <title>HTML with PHP</title>
 </head>
+<body>
+    
+    
+<?php
+// 检查是否有POST请求
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // 获取表单数据
+    $username = $_POST['username'];
+    
+    // 处理数据（这里只是简单回显）
+    echo "您好，".$username."！";
+}
+?>
+    
+</body>
+</html>
