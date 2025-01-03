@@ -1,21 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>HTML with PHP</title>
+    <meta charset="UTF8">
+    <meta name="viewport" content="width=devicewidth, initialscale=1.0">
+    <title>如何在HTML中应用PHP文件</title>
 </head>
 <body>
-    
-    
-<?php
-// 检查是否有POST请求
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // 获取表单数据
-    $username = $_POST['username'];
-    
-    // 处理数据（这里只是简单回显）
-    echo "您好，".$username."！";
-}
-?>
-    
+    <h1>个人信息</h1>
+    <iframe src="example.php" width="100%" height="200" frameborder="0"></iframe>
 </body>
 </html>
