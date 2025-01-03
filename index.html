@@ -162,4 +162,50 @@
                     if(res.code == 200){
                         
                         console.log('支付成功');
-       
+                        $("#zsmQrcode").prop("src","./img/success.png");
+                        $('#orderExpireTime').css('display','none');
+                        clearInterval(checkPayInterval);
+  
+                    }else{
+                        
+                        console.log(res.msg);
+                    }
+                }
+            });
+        }
+        
+        // 倒计时
+        function clock(times){
+            
+            // 获取时分秒
+            var h=parseInt(times/3600);
+            var m=parseInt((times%3600)/60);
+            var s=(times%3600)%60;
+            
+            // 在页面中显示倒计时
+            $('#orderExpireTime').html(m+"分"+s+"秒后过期");
+            
+            // 倒计时
+            if(times > 0){
+                times = times-1;
+                setTimeout(function (){
+                    clock(times);
+                }, 1000);
+            }else{
+                
+                // 显示订单过期
+                $("#zsmQrcode").prop("src","./img/expire.png");
+                $('#orderExpireTime').text('订单已过期，请刷新页面！');
+                
+                // 结束轮询
+                clearInterval(checkPayInterval);
+                
+                console.log('订单过期，停止监听');
+            }
+        }
+        
+    </script>
+    </div>
+</body>
+
+</html>
